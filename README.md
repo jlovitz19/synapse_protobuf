@@ -1,2 +1,2 @@
-# synaptic_pb
-Synaptic Protobuf Definitions
+# synapse_pb
+Synapse Protobuf Definitions

@@ -6,17 +6,23 @@ add_library(${PROJECT_NAME}
   ${PROTO_HDRS}
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE
-  ${Protobuf_INCLUDE_DIR}
-  ${CMAKE_CURRENT_BINARY_DIR}
+ament_target_dependencies(${PROJECT_NAME} Protobuf) 
+
+target_include_directories(${PROJECT_NAME}
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+    $<INSTALL_INTERFACE:include>)
+
+install(
+  TARGETS ${PROJECT_NAME}
+  EXPORT ${PROJECT_NAME}
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
 )
 
 install(FILES
   ${PROTO_HDRS}
   DESTINATION include/${PROJECT_NAME}
-)
-
-install(TARGETS
-  ${PROJECT_NAME}
-  DESTINATION lib/${PROJECT_NAME}
 )

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(synapse_pb)
+project(synapse_protobuf)
 
 find_package(Protobuf REQUIRED)
 

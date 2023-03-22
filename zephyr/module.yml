@@ -1,4 +1,4 @@
-name: synapse_pb
+name: synapse_protobuf
 build:
   cmake-ext: True
   kconfig-ext: True

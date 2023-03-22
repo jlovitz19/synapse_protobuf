@@ -1,4 +1,6 @@
 name: synapse_protobuf
 build:
-  cmake-ext: True
-  kconfig-ext: True
+  kconfig: zephyr/Kconfig
+  cmake: zephyr
+  depends:
+    - nanopb

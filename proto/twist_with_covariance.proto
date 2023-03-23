@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "twist.proto";
+
+message TwistWithCovariance {
+	Twist twist = 1;
+	repeated double covariance = 2;
+}

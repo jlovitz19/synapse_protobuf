@@ -1,6 +1,8 @@
 file(GLOB PROTO_FILES "*.proto")
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS DESCRIPTORS ${PROTO_FILES})  
 
+message(STATUS "proto: ${PROTO_FILES}")
+
 add_library(${PROJECT_NAME}
   ${PROTO_SRCS}
   ${PROTO_HDRS}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "synapse_header.proto";
+import "pose_with_covariance.proto";
+import "twist_with_covariance.proto";
+
+message Odometry {
+	Header header = 1;
+	string child_frame_id = 2;
+	PoseWithCovariance pose = 3;
+	TwistWithCovariance twist = 4;
+}

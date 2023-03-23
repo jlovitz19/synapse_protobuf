@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Joy {
+	repeated float axes = 1;
+	repeated int32 buttons = 2;
+}

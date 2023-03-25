@@ -1,7 +1,12 @@
 file(GLOB PROTO_FILES "*.proto")
-protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS DESCRIPTORS ${PROTO_FILES})  
-
-message(STATUS "proto: ${PROTO_FILES}")
+set(PROTO_SRCS)
+set(PROTO_HDRS)
+foreach(PROTO_FILE ${PROTO_FILES})
+  message(STATUS "proto file: ${PROTO_FILE}")
+  protobuf_generate_cpp(PROTO_SRC PROTO_HDR ${PROTO_FILE})
+  list(APPEND PROTO_SRCS ${PROTO_SRC})
+  list(APPEND PROTO_HDRS ${PROTO_HDR})
+endforeach()
 
 add_library(${PROJECT_NAME}
   ${PROTO_SRCS}

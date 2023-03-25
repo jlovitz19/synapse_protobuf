@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "synapse_header.proto";
+import "header.proto";
 import "pose_with_covariance.proto";
 import "twist_with_covariance.proto";
 

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "time.proto";
+import "header.proto";
+
+message Clock
+{
+	Header header = 1;
+	Time system = 2;
+	Time real = 3;
+	Time sim = 4;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "header.proto";
+
+message BezierTrajectory
+{
+  Header header             = 1;
+  int32 sequence            = 2;
+  uint64 time_start         = 3;
+  uint64 time_stop          = 4;
+  repeated float x          = 6;
+  repeated float y          = 7;
+  repeated float z          = 8;
+  repeated float yaw        = 9;
+}

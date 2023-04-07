@@ -13,6 +13,8 @@ nanopb_generate_cpp(PROTO_SOURCES PROTO_HEADERS
 message(STATUS "srcs:${PROTO_SOURCES}")
    
 zephyr_library_named(synapse_protobuf)
+
+target_compile_options(synapse_protobuf PRIVATE -Wall -Wextra -Wpedantic -Werror)
     
 # we need to be able to include generated header files
 zephyr_include_directories(

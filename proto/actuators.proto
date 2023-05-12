@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 import "header.proto";
-import "nanopb.proto";
 
 message Actuators {
 	Header header = 1;

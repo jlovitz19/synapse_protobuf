@@ -1,0 +1,3 @@
+Actuators.position max_count:16
+Actuators.velocity max_count:16
+Actuators.normalized max_count:16

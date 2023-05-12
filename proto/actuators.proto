@@ -5,7 +5,7 @@ import "nanopb.proto";
 
 message Actuators {
 	Header header = 1;
-	repeated double position = 2 [(nanopb).max_count = 16];
-	repeated double velocity = 3 [(nanopb).max_count = 16];
-	repeated double normalized = 4 [(nanopb).max_count = 16];
+	repeated double position = 2;
+	repeated double velocity = 3;
+	repeated double normalized = 4;
 }

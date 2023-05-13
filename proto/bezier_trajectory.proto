@@ -8,8 +8,8 @@ message BezierTrajectory
   int32 sequence            = 2;
   uint64 time_start         = 3;
   uint64 time_stop          = 4;
-  repeated float x          = 6;
-  repeated float y          = 7;
-  repeated float z          = 8;
-  repeated float yaw        = 9;
+  repeated float x          = 5;
+  repeated float y          = 6;
+  repeated float z          = 7;
+  repeated float yaw        = 8;
 }

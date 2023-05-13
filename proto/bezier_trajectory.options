@@ -1,0 +1,4 @@
+BezierTrajectory.x max_count:8
+BezierTrajectory.y max_count:8
+BezierTrajectory.z max_count:8
+BezierTrajectory.yaw max_count:8

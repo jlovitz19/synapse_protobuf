@@ -1,4 +1,5 @@
 syntax = "proto3";
+package synapse.msgs;
 
 import "vector3.proto";
 

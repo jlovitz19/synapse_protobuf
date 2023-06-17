@@ -1,4 +1,4 @@
-BezierTrajectory.x max_count:8
-BezierTrajectory.y max_count:8
-BezierTrajectory.z max_count:8
-BezierTrajectory.yaw max_count:8
+synapse.msgs.BezierTrajectory.x max_count:8
+synapse.msgs.BezierTrajectory.y max_count:8
+synapse.msgs.BezierTrajectory.z max_count:8
+synapse.msgs.BezierTrajectory.yaw max_count:8

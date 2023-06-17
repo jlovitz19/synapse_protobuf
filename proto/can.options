@@ -1,2 +1,2 @@
-Can.data max_count:64
-Can.data int_size:IS_8
+synapse.msgs.Can.data max_count:64
+synapse.msgs.Can.data int_size:IS_8

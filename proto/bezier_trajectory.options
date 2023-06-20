@@ -1,1 +1,1 @@
-synapse.msgs.BezierTrajectory.BezierCurve max_count:8
+synapse.msgs.BezierTrajectory.curves max_count:8

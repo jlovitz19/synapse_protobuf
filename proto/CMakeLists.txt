@@ -1,11 +1,14 @@
 set(PROTO_FILES
     actuators.proto
+    battery_state.proto
     bezier_curve.proto
     bezier_trajectory.proto
     can.proto
     clock.proto
     header.proto
+    imu.proto
     joy.proto
+    magnetic_field.proto
     nav_sat_fix.proto
     nav_sat_status.proto
     odometry.proto

@@ -1,4 +1,24 @@
-file(GLOB PROTO_FILES "*.proto")
+set(PROTO_FILES
+    actuators.proto
+    bezier_curve.proto
+    bezier_trajectory.proto
+    can.proto
+    clock.proto
+    header.proto
+    joy.proto
+    nav_sat_fix.proto
+    nav_sat_status.proto
+    odometry.proto
+    point.proto
+    pose.proto
+    pose_with_covariance.proto
+    quaternion.proto
+    time.proto
+    timestamp.proto
+    twist.proto
+    twist_with_covariance.proto
+    vector3.proto)
+
 set(PROTO_SRCS)
 set(PROTO_HDRS)
 foreach(PROTO_FILE ${PROTO_FILES})

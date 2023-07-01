@@ -4,7 +4,7 @@ set(PROTO_FILES
     bezier_curve.proto
     bezier_trajectory.proto
     can.proto
-    clock.proto
+    sim_clock.proto
     header.proto
     imu.proto
     joy.proto
@@ -17,19 +17,33 @@ set(PROTO_FILES
     pose_with_covariance.proto
     quaternion.proto
     time.proto
-    timestamp.proto
     twist.proto
     twist_with_covariance.proto
-    vector3.proto)
+    vector3.proto
+    )
 
 set(PROTO_SRCS)
 set(PROTO_HDRS)
-foreach(PROTO_FILE ${PROTO_FILES})
-  message(STATUS "proto file: ${PROTO_FILE}")
-  protobuf_generate_cpp(PROTO_SRC PROTO_HDR ${PROTO_FILE})
-  list(APPEND PROTO_SRCS ${PROTO_SRC})
-  list(APPEND PROTO_HDRS ${PROTO_HDR})
+
+protobuf_generate(
+    APPEND_PATH
+    LANGUAGE cpp
+    OUT_VAR outvar
+    IMPORT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../..
+    PROTOS ${PROTO_FILES})
+
+foreach(_file ${outvar})
+    if (_file MATCHES "cc$")
+        list(APPEND PROTO_SRCS ${_file})
+    elseif (_file MATCHES "h$")
+        list(APPEND PROTO_HDRS ${_file})
+    elseif (_file MATCHES "hpp$")
+        list(APPEND PROTO_HDRS ${_file})
+    endif()
 endforeach()
+
+message(STATUS "proto_src: ${PROTO_SRCS}")
+message(STATUS "proto_hdrs: ${PROTO_HDRS}")
 
 add_library(${PROJECT_NAME}
   ${PROTO_SRCS}
@@ -39,20 +53,22 @@ add_library(${PROJECT_NAME}
 ament_target_dependencies(${PROJECT_NAME} Protobuf) 
 
 target_include_directories(${PROJECT_NAME}
-  PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
-    $<INSTALL_INTERFACE:include>)
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../..>
+        $<INSTALL_INTERFACE:include>)
 
 install(
-  TARGETS ${PROJECT_NAME}
-  EXPORT ${PROJECT_NAME}
-  LIBRARY DESTINATION lib
-  ARCHIVE DESTINATION lib
-  RUNTIME DESTINATION bin
-  INCLUDES DESTINATION include
+    TARGETS ${PROJECT_NAME}
+    EXPORT ${PROJECT_NAME}
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+    INCLUDES DESTINATION include
 )
 
 install(FILES
-  ${PROTO_HDRS}
-  DESTINATION include/${PROJECT_NAME}
+    ${PROTO_HDRS}
+    DESTINATION include/${PROJECT_NAME}
 )
+
+# vi: et ts=4 sw=4

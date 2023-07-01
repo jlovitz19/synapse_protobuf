@@ -10,7 +10,7 @@ import "header.proto";
 /// \interface SimClock
 /// \brief A message for simulation, real, system clock
 
-message Clock
+message SimClock
 {
   	/// \brief Optional header data
 	Header header = 1;

@@ -1,4 +1,5 @@
 set(PROTO_FILES
+    altimeter.proto
     actuators.proto
     battery_state.proto
     bezier_curve.proto

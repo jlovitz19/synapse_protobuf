@@ -21,6 +21,7 @@ set(PROTO_FILES
     twist.proto
     twist_with_covariance.proto
     vector3.proto
+    wheel_odometry.proto
     )
 
 set(PROTO_SRCS)

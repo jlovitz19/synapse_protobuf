@@ -4,22 +4,22 @@ package synapse.msgs;
 import "header.proto";
 
 message Mode {
-	enum ModeStatus {
-		MODE_UNINITIALIZED=0;
-		MODE_MANUAL=1;
-		MODE_AUTO=2;
-		MODE_CMD_VEL=3;
+	enum Mode {
+		UNINITIALIZED=0;
+		MANUAL=1;
+		AUTO=2;
+		CMD_VEL=3;
 	}
-	enum SafetyStatus {
-		SAFETY_ON=0;
-		SAFETY_OFF=1;
+	enum Safety {
+		ON=0;
+		OFF=1;
 	}
-	enum ArmedStatus {
-		UNARMED=0;
+	enum Armed {
+		DISARMED=0;
 		ARMED=1;
 	}
 	Header header = 1;
-	ModeStatus mode = 2;
-	SafetyStatus safety = 3;
-	ArmedStatus armed = 4;
+	Mode mode = 2;
+	Safety safety = 3;
+	Armed armed = 4;
 }

@@ -3,7 +3,7 @@ package synapse.msgs;
 
 import "header.proto";
 
-message Mode {
+message Fsm {
 	enum Mode {
 		UNINITIALIZED=0;
 		MANUAL=1;
@@ -11,8 +11,8 @@ message Mode {
 		CMD_VEL=3;
 	}
 	enum Safety {
-		ON=0;
-		OFF=1;
+		SAFE=0;
+		UNSAFE=1;
 	}
 	enum Armed {
 		DISARMED=0;

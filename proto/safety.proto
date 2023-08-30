@@ -4,12 +4,12 @@ package synapse.msgs;
 import "header.proto";
 
 message Safety {
-	enum Safety {
-		UNKNOWN_SAFETY=0;
+	enum Status {
+		UNKNOWN=0;
 		SAFE=1;
 		UNSAFE=2;
 	}
 
 	Header header = 1;
-	Safety safety = 2;
+	Status safety = 2;
 }

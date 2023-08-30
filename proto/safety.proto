@@ -11,5 +11,5 @@ message Safety {
 	}
 
 	Header header = 1;
-	bool safety = 2;
+	Safety safety = 2;
 }

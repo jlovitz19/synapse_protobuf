@@ -1,0 +1,15 @@
+syntax = "proto3";
+package synapse.msgs;
+
+import "header.proto";
+
+message Safety {
+	enum Safety {
+		UNKNOWN_SAFETY=0;
+		SAFE=1;
+		UNSAFE=2;
+	}
+
+	Header header = 1;
+	bool safety = 2;
+}

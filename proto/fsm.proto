@@ -5,21 +5,17 @@ import "header.proto";
 
 message Fsm {
 	enum Mode {
-		UNINITIALIZED=0;
+		UNKNOWN_MODE=0;
 		MANUAL=1;
 		AUTO=2;
 		CMD_VEL=3;
 	}
-	enum Safety {
-		SAFE=0;
-		UNSAFE=1;
-	}
 	enum Armed {
-		DISARMED=0;
-		ARMED=1;
+		UNKNOWN_ARMING=0;
+		DISARMED=1;
+		ARMED=2;
 	}
 	Header header = 1;
 	Mode mode = 2;
-	Safety safety = 3;
-	Armed armed = 4;
+	Armed armed = 3;
 }

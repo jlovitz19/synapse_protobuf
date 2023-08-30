@@ -4,6 +4,7 @@ set(PROTO_FILES
     battery_state.proto
     bezier_curve.proto
     bezier_trajectory.proto
+    bool_stamped.proto
     can.proto
     sim_clock.proto
     header.proto

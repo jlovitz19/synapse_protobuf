@@ -31,4 +31,7 @@ zephyr_library_sources(
   ${PROTO_HEADERS}
   )
 
+# necessary for module to calll nanopb_generate
+add_dependencies(app synapse_protobuf)
+
 endif()

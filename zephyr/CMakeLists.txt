@@ -18,10 +18,12 @@ message(STATUS "srcs:${PROTO_SOURCES}")
    
 zephyr_library_named(synapse_protobuf)
 
+get_filename_component(buildDirRelFilePath "${CMAKE_CURRENT_BINARY_DIR}/.."
+                       REALPATH BASE_DIR "${CMAKE_BINARY_DIR}")
+
 # we need to be able to include generated header files
 zephyr_include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}
-  ${CMAKE_CURRENT_BINARY_DIR}/..
+  ${buildDirRelFilePath}
 )
 
 zephyr_library_sources(
@@ -29,7 +31,4 @@ zephyr_library_sources(
   ${PROTO_HEADERS}
   )
 
-# necessary for module to calll nanopb_generate
-add_dependencies(app synapse_protobuf)
-        
 endif()

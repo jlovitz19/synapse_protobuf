@@ -1,6 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
 if (CONFIG_SYNAPSE_PROTOBUF)
 
+list(APPEND CMAKE_MODULE_PATH ${ZEPHYR_BASE}/modules/nanopb)
+include(nanopb)
+
 set(SYNAPSE_PROTOBUF_DIR ${ZEPHYR_CURRENT_MODULE_DIR})
 set(PROTO_DIR ${SYNAPSE_PROTOBUF_DIR}/proto)
  
@@ -11,12 +14,11 @@ message(STATUS "files:${PROTO_FILES}")
    
 set(NANOPB_IMPORT_DIRS "${PROTO_DIR}")
 set(NANOPB_OPTIONS "-I${CMAKE_SOURCE_DIR}")
-
-nanopb_generate_cpp(PROTO_SOURCES PROTO_HEADERS
-        RELPATH ${PROTO_DIR} ${PROTO_FILES})
 message(STATUS "srcs:${PROTO_SOURCES}")
-   
+
 zephyr_library_named(synapse_protobuf)
+
+zephyr_nanopb_sources(synapse_protobuf ${PROTO_FILES})
 
 get_filename_component(buildDirRelFilePath "${CMAKE_CURRENT_BINARY_DIR}/.."
                        REALPATH BASE_DIR "${CMAKE_BINARY_DIR}")
@@ -25,11 +27,6 @@ get_filename_component(buildDirRelFilePath "${CMAKE_CURRENT_BINARY_DIR}/.."
 zephyr_include_directories(
   ${buildDirRelFilePath}
 )
-
-zephyr_library_sources(
-  ${PROTO_SOURCES}
-  ${PROTO_HEADERS}
-  )
 
 # necessary for module to calll nanopb_generate
 add_dependencies(app synapse_protobuf)

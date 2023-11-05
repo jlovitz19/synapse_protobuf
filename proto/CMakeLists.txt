@@ -10,6 +10,8 @@ set(PROTO_FILES
     header.proto
     imu.proto
     joy.proto
+    led.proto
+    led_array.proto
     magnetic_field.proto
     nav_sat_fix.proto
     nav_sat_status.proto

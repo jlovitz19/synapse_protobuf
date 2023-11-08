@@ -1,12 +1,11 @@
 set(PROTO_FILES
-    altimeter.proto
     actuators.proto
+    altimeter.proto
     battery_state.proto
     bezier_curve.proto
     bezier_trajectory.proto
     can.proto
-    safety.proto
-    sim_clock.proto
+    fsm.proto
     header.proto
     imu.proto
     joy.proto
@@ -20,6 +19,8 @@ set(PROTO_FILES
     pose.proto
     pose_with_covariance.proto
     quaternion.proto
+    safety.proto
+    sim_clock.proto
     time.proto
     twist.proto
     twist_with_covariance.proto

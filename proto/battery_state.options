@@ -1,2 +1,2 @@
 synapse.msgs.BatteryState.cell_voltage max_count:16
-synapse.msgs.BatteryState.cell_voltage max_count:16
+synapse.msgs.BatteryState.cell_temperature max_count:16

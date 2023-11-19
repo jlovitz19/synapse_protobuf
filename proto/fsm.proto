@@ -9,6 +9,7 @@ message Fsm {
 		MANUAL=1;
 		AUTO=2;
 		CMD_VEL=3;
+		CALIBRATION=4;
 	}
 	enum Armed {
 		UNKNOWN_ARMING=0;

@@ -56,4 +56,6 @@ message Status {
 	string status_message = 8;
 	uint32 fuel_percentage = 9;
 	float power = 10;
+	uint32 request_seq = 11;
+	bool request_rejected = 12;
 }

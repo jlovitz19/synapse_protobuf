@@ -1,0 +1,12 @@
+syntax = "proto3";
+package synapse.msgs;
+
+import "header.proto";
+import "vector3.proto";
+import "quaternion.proto";
+
+message MyMsg {
+  Header header = 1;
+  Quaternion my_quaternion = 2;
+  repeated double my_array_of_doubles = 3;
+}
